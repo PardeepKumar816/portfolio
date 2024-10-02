@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:protfolio/utils/device_size.dart';
+import 'package:protfolio/utils/my_colors.dart';
 
 class ProjectsDesktop extends StatelessWidget {
   const ProjectsDesktop({super.key});
@@ -81,7 +82,7 @@ class ProjectCard extends StatelessWidget {
       width: 350,
       height: 250,
       decoration: BoxDecoration(
-        color: const Color(0xff265A57),
+        gradient: MyColors.linearGradient,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -107,7 +108,7 @@ class ProjectCard extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Colors.white, // Color(0xff292A2E),
+                    color: MyColors.yellowE3C01C,
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: const Text(
@@ -127,7 +128,7 @@ class ProjectCard extends StatelessWidget {
             height: 100,
             padding: const EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
-              color: const Color(0xff265A57),
+              gradient: MyColors.linearGradient,
               borderRadius: BorderRadius.circular(10),
             ),
             child: const Column(

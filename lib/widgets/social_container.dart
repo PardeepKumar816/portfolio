@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio/utils/my_colors.dart';
 
 import '../utils/device_size.dart';
 
@@ -17,7 +18,7 @@ class SocialContainer extends StatelessWidget {
       height: 48,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: const Color(0xffB96220).withOpacity(0.3),
+        color: MyColors.yellowE3812A.withOpacity(0.1),
       ),
       child: Image.asset(
         link,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio/utils/my_colors.dart';
 
 class MultilineTextContainer extends StatelessWidget {
   const MultilineTextContainer(
@@ -15,7 +16,11 @@ class MultilineTextContainer extends StatelessWidget {
       children: [
         Text(
           "$text1+ ",
-          style: const TextStyle(fontSize: 32, fontFamily: 'Montserrat'),
+          style: const TextStyle(
+            fontSize: 32,
+            fontFamily: 'Montserrat',
+            color: Colors.white,
+          ),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,14 +28,14 @@ class MultilineTextContainer extends StatelessWidget {
             Text(
               text2,
               style: const TextStyle(
-                  color: Color(0xffB96220),
+                  color: MyColors.yellowE3812A,
                   fontSize: 12,
                   fontFamily: 'Montserrat'),
             ),
             Text(
               text3,
               style: const TextStyle(
-                  color: Color(0xffB96220),
+                  color: MyColors.yellowE3812A,
                   fontSize: 12,
                   fontFamily: 'Montserrat'),
             )

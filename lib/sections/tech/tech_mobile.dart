@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:protfolio/utils/device_size.dart';
+import 'package:protfolio/utils/my_colors.dart';
 
 class TechMobile extends StatelessWidget {
   const TechMobile({Key? key}) : super(key: key);
@@ -9,345 +10,349 @@ class TechMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffE8E8E8),
-      body: Padding(
-        padding: EdgeInsets.only(left: getDeviceSize(context).width / 9),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 32,
-            ),
-            Text(
-              "Tech Stack",
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                color: Colors.black,
-                fontWeight: FontWeight.w700,
-                fontSize: getDeviceSize(context).width < 506 ? 16 : 22,
+      body: Container(
+        decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
+        child: Padding(
+          padding: EdgeInsets.only(left: getDeviceSize(context).width / 9),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 32,
               ),
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            Text(
+              Text(
+                "Tech Stack",
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  color: MyColors.yellowE3812A,
+                  fontWeight: FontWeight.w700,
+                  fontSize: getDeviceSize(context).width < 506 ? 18 : 22,
+                ),
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              Text(
                 """Change is inevitable, so I keep on exploring new technology, learn 
 it in a minimal possible way and then build something out of it to 
 see how well I did :)""",
                 style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                    fontSize: getDeviceSize(context).width < 506 ? 9 : 12)),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const SkillName(
-              skillName: "Mobile development",
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const Row(
-              children: [
-                SkillContainer(
-                  asset: "assets/icons/flutter.svg",
-                  skill: "Flutter",
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                SkillContainer(
-                  asset: "assets/icons/dart.svg",
-                  skill: "Dart",
-                ),
-              ],
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const SkillName(
-              skillName: "Web development",
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            Column(
-              children: [
-                if (getDeviceSize(context).width > 506)
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/html.svg",
-                        skill: "HTML 5",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/css.svg",
-                        skill: "CSS 3",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/bootstrap.svg",
-                        skill: "Bootstrap",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/js.svg",
-                        skill: "Javascript",
-                      ),
-                    ],
-                  ),
-                if (getDeviceSize(context).width < 506) ...[
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/html.svg",
-                        skill: "HTML 5",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/css.svg",
-                        skill: "CSS 3",
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/bootstrap.svg",
-                        skill: "Bootstrap",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/js.svg",
-                        skill: "Javascript",
-                      ),
-                    ],
-                  )
-                ]
-              ],
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const SkillName(
-              skillName: "Server Side",
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            Column(
-              children: [
-                if (getDeviceSize(context).width > 506)
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/node.svg",
-                        skill: "Node.js",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/express.svg",
-                        skill: "Express.js",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/api.svg",
-                        skill: "REST APIs",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/dart_frog.svg",
-                        skill: "Dart Frog",
-                      ),
-                    ],
-                  ),
-                if (getDeviceSize(context).width < 506) ...[
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/node.svg",
-                        skill: "Node.js",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/express.svg",
-                        skill: "Express.js",
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/api.svg",
-                        skill: "REST APIs",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/dart_frog.svg",
-                        skill: "Dart Frog",
-                      ),
-                    ],
-                  )
-                ]
-              ],
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const SkillName(
-              skillName: "Databases",
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            Column(
-              children: [
-                if (getDeviceSize(context).width > 360)
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/firebase.svg",
-                        skill: "Firebase",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/mongo.svg",
-                        skill: "MongoDB",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/sql.svg",
-                        skill: "MySQL",
-                      ),
-                    ],
-                  ),
-                if (getDeviceSize(context).width < 360) ...[
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/firebase.svg",
-                        skill: "Firebase",
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      SkillContainer(
-                        asset: "assets/icons/mongo.svg",
-                        skill: "MongoDB",
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  const Row(
-                    children: [
-                      SkillContainer(
-                        asset: "assets/icons/dart_frog.svg",
-                        skill: "Dart Frog",
-                      ),
-                    ],
-                  )
-                ]
-              ],
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const SkillName(
-              skillName: "Version controlloing & management",
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const Row(
-              children: [
-                SkillContainer(
-                  asset: "assets/icons/git.svg",
-                  skill: "Git",
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                SkillContainer(
-                  asset: "assets/icons/github.svg",
-                  skill: "GitHub",
-                ),
-              ],
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const SkillName(
-              skillName: "UI/UX Design",
-            ),
-            SizedBox(
-              height: getDeviceSize(context).width < 506 ? 8 : 16,
-            ),
-            const Row(
-              children: [
-                SkillContainer(
-                  asset: "assets/icons/figma.svg",
-                  skill: "Figma",
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                SkillContainer(
-                  asset: "assets/icons/adobexd.svg",
-                  skill: "Adobe XD",
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 32.h,
-            ),
-            Flexible(
-              child: Center(
-                child: Image.asset(
-                  "assets/images/developer.png",
-                  fit: BoxFit.contain,
+                  fontFamily: 'Montserrat',
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                  fontSize: getDeviceSize(context).width < 506 ? 10 : 12,
                 ),
               ),
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-          ],
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const SkillName(
+                skillName: "Mobile development",
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const Row(
+                children: [
+                  SkillContainer(
+                    asset: "assets/icons/flutter.svg",
+                    skill: "Flutter",
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  SkillContainer(
+                    asset: "assets/icons/dart.svg",
+                    skill: "Dart",
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const SkillName(
+                skillName: "Web development",
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              Column(
+                children: [
+                  if (getDeviceSize(context).width > 506)
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/html.svg",
+                          skill: "HTML 5",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/css.svg",
+                          skill: "CSS 3",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/bootstrap.svg",
+                          skill: "Bootstrap",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/js.svg",
+                          skill: "Javascript",
+                        ),
+                      ],
+                    ),
+                  if (getDeviceSize(context).width < 506) ...[
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/html.svg",
+                          skill: "HTML 5",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/css.svg",
+                          skill: "CSS 3",
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/bootstrap.svg",
+                          skill: "Bootstrap",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/js.svg",
+                          skill: "Javascript",
+                        ),
+                      ],
+                    )
+                  ]
+                ],
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const SkillName(
+                skillName: "Server Side",
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              Column(
+                children: [
+                  if (getDeviceSize(context).width > 506)
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/node.svg",
+                          skill: "Node.js",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/express.svg",
+                          skill: "Express.js",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/api.svg",
+                          skill: "REST APIs",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/dart_frog.svg",
+                          skill: "Dart Frog",
+                        ),
+                      ],
+                    ),
+                  if (getDeviceSize(context).width < 506) ...[
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/node.svg",
+                          skill: "Node.js",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/express.svg",
+                          skill: "Express.js",
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/api.svg",
+                          skill: "REST APIs",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/dart_frog.svg",
+                          skill: "Dart Frog",
+                        ),
+                      ],
+                    )
+                  ]
+                ],
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const SkillName(
+                skillName: "Databases",
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              Column(
+                children: [
+                  if (getDeviceSize(context).width > 360)
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/firebase.svg",
+                          skill: "Firebase",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/mongo.svg",
+                          skill: "MongoDB",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/sql.svg",
+                          skill: "MySQL",
+                        ),
+                      ],
+                    ),
+                  if (getDeviceSize(context).width < 360) ...[
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/firebase.svg",
+                          skill: "Firebase",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/mongo.svg",
+                          skill: "MongoDB",
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Row(
+                      children: [
+                        SkillContainer(
+                          asset: "assets/icons/dart_frog.svg",
+                          skill: "Dart Frog",
+                        ),
+                      ],
+                    )
+                  ]
+                ],
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const SkillName(
+                skillName: "Version controlloing & management",
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const Row(
+                children: [
+                  SkillContainer(
+                    asset: "assets/icons/git.svg",
+                    skill: "Git",
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  SkillContainer(
+                    asset: "assets/icons/github.svg",
+                    skill: "GitHub",
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const SkillName(
+                skillName: "UI/UX Design",
+              ),
+              SizedBox(
+                height: getDeviceSize(context).width < 506 ? 8 : 16,
+              ),
+              const Row(
+                children: [
+                  SkillContainer(
+                    asset: "assets/icons/figma.svg",
+                    skill: "Figma",
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  SkillContainer(
+                    asset: "assets/icons/adobexd.svg",
+                    skill: "Adobe XD",
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 32.h,
+              ),
+              Flexible(
+                child: Center(
+                  child: Image.asset(
+                    "assets/images/developer.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -383,7 +388,8 @@ class SkillContainer extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8, bottom: 8, right: 16, left: 8),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(8)),
-        color: Color(0xff585858),
+        //   color: Color(0xff585858),
+        gradient: MyColors.linearGradient,
       ),
       child: Row(
         children: [

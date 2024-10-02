@@ -1,8 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:protfolio/constants/constants.dart';
 import 'package:protfolio/utils/device_size.dart';
 import 'package:protfolio/utils/my_colors.dart';
-import 'package:protfolio/widgets/drawer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/multi_line_text_container.dart';
 import '../../widgets/social_container.dart';
@@ -13,158 +15,13 @@ class HomeTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const CustomDrawer(),
+        backgroundColor: const Color(0xff232129),
         body: Container(
-          decoration: BoxDecoration(gradient: MyColors.linearGradientDark),
+          decoration:
+              const BoxDecoration(gradient: MyColors.linearGradientDark),
           child: Builder(builder: (context) {
             return Column(
               children: [
-                if (getDeviceSize(context).width > 767)
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: getDeviceSize(context).width * 0.1,
-                        right: getDeviceSize(context).width * 0.05,
-                        top: getDeviceSize(context).width * 0.03),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Row(
-                          children: [
-                            Text(
-                              "< ",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Color(0xffB96220),
-                              ),
-                            ),
-                            Text(
-                              "Pardeep",
-                              style: TextStyle(
-                                fontFamily: 'Agustina',
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xffB96220),
-                              ),
-                            ),
-                            Text(
-                              " >",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Color(0xffB96220),
-                              ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "About",
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 16,
-                                    color: Color(0xffB96220),
-                                  ),
-                                )),
-                            SizedBox(
-                              width: getDeviceSize(context).width * 0.03,
-                            ),
-                            TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "Tech",
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 16,
-                                    color: Color(0xffB96220),
-                                  ),
-                                )),
-                            SizedBox(
-                              width: getDeviceSize(context).width * 0.03,
-                            ),
-                            TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "Projects",
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 16,
-                                    color: Color(0xffB96220),
-                                  ),
-                                )),
-                            SizedBox(
-                              width: getDeviceSize(context).width * 0.03,
-                            ),
-                            TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "Experience",
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 16,
-                                    color: Color(0xffB96220),
-                                  ),
-                                )),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                if (getDeviceSize(context).width <= 767)
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: getDeviceSize(context).width * 0.1,
-                      right: getDeviceSize(context).width * 0.05,
-                      top: getDeviceSize(context).width * 0.03,
-                      bottom: 32,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Scaffold.of(context).openDrawer();
-                          },
-                          child: const Icon(
-                            Icons.menu,
-                            color: Color(0xffB96220),
-                          ),
-                        ),
-                        const Row(
-                          children: [
-                            Text(
-                              "< ",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Color(0xffB96220),
-                              ),
-                            ),
-                            Text(
-                              "Pardeep",
-                              style: TextStyle(
-                                fontFamily: 'Agustina',
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xffB96220),
-                              ),
-                            ),
-                            Text(
-                              " >",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Color(0xffB96220),
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                // if (getDeviceSize(context).width <= 767)
-                //   SizedBox(
-                //     height: 32,
-                //   ),
                 if (getDeviceSize(context).width > 900)
                   Padding(
                     padding: EdgeInsets.only(
@@ -172,16 +29,22 @@ class HomeTablet extends StatelessWidget {
                     ),
                     child: Align(
                       alignment: Alignment.centerRight,
-                      child: Container(
-                        width: getDeviceSize(context).width * 0.06,
-                        height: getDeviceSize(context).width * 0.06,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffB96220).withOpacity(0.3),
-                          shape: BoxShape.circle,
-                        ),
-                        child: GestureDetector(
+                      child: InkWell(
+                        onTap: () {
+                          launchUrl(
+                            Uri.parse("https://github.com/PardeepKumar816"),
+                          );
+                        },
+                        child: Container(
+                          width: getDeviceSize(context).width * 0.06,
+                          height: getDeviceSize(context).width * 0.06,
+                          decoration: const BoxDecoration(
+                            // color: MyColors.yellowE3812A,
+                            gradient: MyColors.linearGradient,
+                            shape: BoxShape.circle,
+                          ),
                           child: Image.asset(
-                            "assets/icons/github.png",
+                            "assets/logo/github-black.png",
                             width: getDeviceSize(context).width * 0.01,
                             height: getDeviceSize(context).width * 0.01,
                             fit: BoxFit.scaleDown,
@@ -207,7 +70,7 @@ class HomeTablet extends StatelessWidget {
                             width: 220,
                             height: 32,
                             decoration: const BoxDecoration(
-                                color: Color(0xffB96220),
+                                gradient: MyColors.linearGradient2,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(4))),
                             child: const Text(
@@ -228,9 +91,11 @@ class HomeTablet extends StatelessWidget {
                                 .textTheme
                                 .headlineLarge!
                                 .copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black,
-                                    fontFamily: 'Montserrat'),
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 64,
+                                ),
                           ),
                           Text(
                             "Kumar",
@@ -239,10 +104,11 @@ class HomeTablet extends StatelessWidget {
                                 .headlineLarge!
                                 .copyWith(
                                     fontWeight: FontWeight.w200,
-                                    color: Colors.white,
+                                    color: Colors.white.withOpacity(0.8),
                                     letterSpacing: 10,
                                     height: 1.0,
-                                    fontFamily: 'Montserrat'),
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 64),
                           ),
                           const SizedBox(
                             height: 8,
@@ -252,7 +118,7 @@ class HomeTablet extends StatelessWidget {
                             children: [
                               Icon(
                                 Icons.play_arrow,
-                                color: const Color(0xffB96220),
+                                color: MyColors.yellowE3812A,
                                 size: getDeviceSize(context).width * 0.02,
                               ),
                               const SizedBox(
@@ -260,25 +126,45 @@ class HomeTablet extends StatelessWidget {
                               ),
                               AnimatedTextKit(
                                 animatedTexts: [
-                                  TyperAnimatedText('Student,',
-                                      textStyle: const TextStyle(
-                                          fontFamily: 'Montserrat')),
-                                  TyperAnimatedText('Software Engineer,',
-                                      textStyle: const TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400)),
-                                  TyperAnimatedText('Flutter Developer,',
-                                      textStyle: const TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400)),
-                                  TyperAnimatedText('MERN Stack Developer,',
-                                      textStyle: const TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400)),
-                                  TyperAnimatedText('Core Java Developer,',
-                                      textStyle: const TextStyle(
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400)),
+                                  TyperAnimatedText(
+                                    'Student,',
+                                    textStyle: const TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  TyperAnimatedText(
+                                    'Software Engineer,',
+                                    textStyle: const TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  TyperAnimatedText(
+                                    'Flutter Developer,',
+                                    textStyle: const TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  TyperAnimatedText(
+                                    'Node.js Developer,',
+                                    textStyle: const TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  TyperAnimatedText(
+                                    'Core Java Developer,',
+                                    textStyle: const TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ],
@@ -294,26 +180,66 @@ class HomeTablet extends StatelessWidget {
                                   width: getDeviceSize(context).width * 0.05,
                                   height: 1,
                                   decoration: const BoxDecoration(
-                                    color: Color(0xffB96220),
+                                    color: MyColors.yellowE3812A,
                                   ),
                                 ),
                                 SizedBox(
                                   width: getDeviceSize(context).width * 0.01,
                                 ),
-                                const SocialContainer(
-                                  link: "logo/linkedin.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://www.linkedin.com/in/pardeep-kumar-a257221a1/"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "logo/linkedin.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "logo/github.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://github.com/PardeepKumar816"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "logo/github.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "logo/instagram.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://www.instagram.com/pardeep_hotwani/"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "logo/instagram.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "logo/twitter.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://twitter.com/Pardeepm006"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "logo/twitter.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "logo/facebook.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://www.facebook.com/Pardeepmalhi816/"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "logo/facebook.png",
+                                  ),
                                 ),
                               ],
                             ),
@@ -324,7 +250,7 @@ class HomeTablet extends StatelessWidget {
                                 const Text(
                                   "LET\'S CHAT!",
                                   style: TextStyle(
-                                      color: Color(0xffB96220),
+                                      color: MyColors.yellowE3812A,
                                       height: 2.0,
                                       fontWeight: FontWeight.w700,
                                       fontFamily: 'Montserrat',
@@ -334,7 +260,7 @@ class HomeTablet extends StatelessWidget {
                                   width: 104,
                                   height: 1,
                                   decoration: const BoxDecoration(
-                                    color: Color(0xffB96220),
+                                    color: MyColors.yellowE3812A,
                                   ),
                                 ),
                               ],
@@ -477,5 +403,214 @@ class HomeTablet extends StatelessWidget {
             );
           }),
         ));
+  }
+}
+
+class TabletBarExtended extends StatelessWidget {
+  const TabletBarExtended({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
+      child: Padding(
+        padding: EdgeInsets.only(
+            left: getDeviceSize(context).width * 0.1,
+            right: getDeviceSize(context).width * 0.05,
+            top: getDeviceSize(context).width * 0.03),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Row(
+              children: [
+                Text(
+                  "< ",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: MyColors.yellowE3812A,
+                  ),
+                ),
+                Text(
+                  "Pardeep",
+                  style: TextStyle(
+                    fontFamily: 'Agustina',
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                    color: MyColors.yellowE3812A,
+                  ),
+                ),
+                Text(
+                  " >",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: MyColors.yellowE3812A,
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                    onPressed: () {
+                      Constants.controller!.animateTo(
+                        0,
+                        duration: const Duration(seconds: 2),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: const Text(
+                      "Home",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        color: MyColors.yellowE3812A,
+                      ),
+                    )),
+                SizedBox(
+                  width: getDeviceSize(context).width * 0.03,
+                ),
+                TextButton(
+                    onPressed: () {
+                      Constants.controller!.animateTo(
+                        1.sh,
+                        duration: const Duration(seconds: 2),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: const Text(
+                      "About",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        color: MyColors.yellowE3812A,
+                      ),
+                    )),
+                SizedBox(
+                  width: getDeviceSize(context).width * 0.03,
+                ),
+                TextButton(
+                    onPressed: () {
+                      Constants.controller!.animateTo(
+                        2.sh,
+                        duration: const Duration(seconds: 2),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: const Text(
+                      "Tech",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        color: MyColors.yellowE3812A,
+                      ),
+                    )),
+                SizedBox(
+                  width: getDeviceSize(context).width * 0.03,
+                ),
+                TextButton(
+                    onPressed: () {
+                      Constants.controller!.animateTo(
+                        3.sh,
+                        duration: const Duration(seconds: 2),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: const Text(
+                      "Projects",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        color: MyColors.yellowE3812A,
+                      ),
+                    )),
+                SizedBox(
+                  width: getDeviceSize(context).width * 0.03,
+                ),
+                TextButton(
+                    onPressed: () {
+                      Constants.controller!.animateTo(
+                        4.sh,
+                        duration: const Duration(seconds: 2),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: const Text(
+                      "Experience",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        color: MyColors.yellowE3812A,
+                      ),
+                    )),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TabletBar extends StatelessWidget {
+  const TabletBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: getDeviceSize(context).width * 0.1,
+          right: getDeviceSize(context).width * 0.05,
+          top: getDeviceSize(context).width * 0.03,
+          bottom: 10,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: const Icon(
+                Icons.menu,
+                color: MyColors.yellowE3812A,
+              ),
+            ),
+            const Row(
+              children: [
+                Text(
+                  "< ",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: MyColors.yellowE3812A,
+                  ),
+                ),
+                Text(
+                  "Pardeep",
+                  style: TextStyle(
+                    fontFamily: 'Agustina',
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                    color: MyColors.yellowE3812A,
+                  ),
+                ),
+                Text(
+                  " >",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: MyColors.yellowE3812A,
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

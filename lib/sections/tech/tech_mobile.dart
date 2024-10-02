@@ -10,6 +10,7 @@ class TechMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff232129),
       body: Container(
         decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
         child: Padding(

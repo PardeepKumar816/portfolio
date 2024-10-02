@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protfolio/utils/my_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants/constants.dart';
 import '../../utils/device_size.dart';
@@ -10,6 +11,7 @@ class AboutMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff232129),
       body: Container(
         decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
         child: Padding(
@@ -74,7 +76,10 @@ class AboutMobile extends StatelessWidget {
               ),
               const Spacer(),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  launchUrl(Uri.parse(
+                      "https://drive.google.com/file/d/1lvCBqGTFv81oQn9_R8VHunss9-3U3r3h/view?usp=sharing"));
+                },
                 child: Container(
                   width: 220,
                   height: 48,

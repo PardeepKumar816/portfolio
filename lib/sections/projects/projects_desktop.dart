@@ -11,59 +11,64 @@ class ProjectsDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffB6D8D2),
-      body: Center(
-        child: SizedBox(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "Projects",
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  color: Color(0xff137E69),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              const Text(
-                "Stuf I'm in loved working with",
-                style: TextStyle(
+      backgroundColor: const Color(0xff232129),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: MyColors.linearGradientDark,
+        ),
+        child: Center(
+          child: SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Projects",
+                  style: TextStyle(
                     fontFamily: 'Montserrat',
-                    color: Color(0xff137E69),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12),
-              ),
-              const SizedBox(
-                height: 64,
-              ),
-              getDeviceSize(context).width > 1120
-                  ? const Wrap(
-                      spacing: 32,
-                      runSpacing: 32,
-                      children: [
-                        ProjectCard(),
-                        ProjectCard(),
-                        ProjectCard(),
-                        ProjectCard(),
-                        ProjectCard(),
-                        ProjectCard(),
-                      ],
-                    )
-                  : CarouselSlider(
-                      items: List.generate(5, (i) {
-                        return const ProjectCard();
-                      }),
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        height: 400.h,
+                    color: MyColors.yellowE3812A,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  "Stuf I'm in loved working with",
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12),
+                ),
+                const SizedBox(
+                  height: 64,
+                ),
+                getDeviceSize(context).width > 1120
+                    ? const Wrap(
+                        spacing: 32,
+                        runSpacing: 32,
+                        children: [
+                          ProjectCard(),
+                          ProjectCard(),
+                          ProjectCard(),
+                          ProjectCard(),
+                          ProjectCard(),
+                          ProjectCard(),
+                        ],
+                      )
+                    : CarouselSlider(
+                        items: List.generate(5, (i) {
+                          return const ProjectCard();
+                        }),
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          height: 400.h,
+                        ),
                       ),
-                    ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

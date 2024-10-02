@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:protfolio/constants/constants.dart';
-import 'package:protfolio/routes/routes.dart';
 import 'package:protfolio/utils/my_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -12,6 +12,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 250,
+      backgroundColor: Colors.black,
       child: Container(
         decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
         child: Padding(
@@ -19,6 +20,18 @@ class CustomDrawer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Align(
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {
+                    Scaffold.of(context).closeDrawer();
+                  },
+                  child: const Icon(
+                    Icons.clear,
+                    color: MyColors.orangeC8171E,
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 32,
               ),
@@ -65,7 +78,12 @@ class CustomDrawer extends StatelessWidget {
               ),
               DrawerIconButton(
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.home);
+                  Navigator.pop(context);
+                  Constants.controller!.animateTo(
+                    0,
+                    duration: const Duration(seconds: 2),
+                    curve: Curves.easeInOut,
+                  );
                 },
                 text: "HOME",
                 icon: FontAwesomeIcons.home,
@@ -134,7 +152,10 @@ class CustomDrawer extends StatelessWidget {
                 height: 24,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  launchUrl(Uri.parse(
+                      "https://drive.google.com/file/d/1lvCBqGTFv81oQn9_R8VHunss9-3U3r3h/view?usp=sharing"));
+                },
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:protfolio/constants/constants.dart';
 import 'package:protfolio/provider/theme_model.dart';
 import 'package:protfolio/routes/routes.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         child: Builder(builder: (context) {
           BuildContext rootContext = context;
           return MaterialApp(
+            navigatorKey: GlobalContext.navigatorKey,
             debugShowCheckedModeBanner: false,
             theme: Provider.of<ThemeModel>(rootContext).isDark
                 ? ThemeData.dark()

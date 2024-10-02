@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:protfolio/responsive/responsive.dart';
 import 'package:protfolio/utils/device_size.dart';
 import 'package:protfolio/utils/my_colors.dart';
-import 'package:protfolio/widgets/drawer.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../widgets/multi_line_text_container.dart';
 import '../../widgets/social_container.dart';
 
@@ -26,7 +26,7 @@ class HomeMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const CustomDrawer(),
+      backgroundColor: const Color(0xff232129),
       body: Container(
         decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
         child: Builder(
@@ -35,53 +35,6 @@ class HomeMobile extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: getDeviceSize(context).width * 0.1,
-                          right: getDeviceSize(context).width * 0.05,
-                          top: getDeviceSize(context).width * 0.03),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Scaffold.of(context).openDrawer();
-                            },
-                            child: const Icon(
-                              Icons.menu,
-                              color: MyColors.yellowE3812A,
-                            ),
-                          ),
-                          const Row(
-                            children: [
-                              Text(
-                                "< ",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: MyColors.yellowE3812A,
-                                ),
-                              ),
-                              Text(
-                                "Pardeep",
-                                style: TextStyle(
-                                  fontFamily: 'Agustina',
-                                  fontSize: 24,
-                                  color: MyColors.yellowE3812A,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              Text(
-                                " >",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: MyColors.yellowE3812A,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
                     const SizedBox(
                       height: 24,
                     ),
@@ -115,23 +68,25 @@ class HomeMobile extends StatelessWidget {
                           Text(
                             "Pardeep",
                             style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                                fontFamily: 'Montserrat',
-                                fontSize: getDeviceSize(context).width < 302
-                                    ? 48
-                                    : 64),
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              fontFamily: 'Montserrat',
+                              fontSize:
+                                  getDeviceSize(context).width < 302 ? 48 : 64,
+                            ),
                           ),
-                          Text("Kumar",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w200,
-                                  color: Colors.white.withOpacity(0.8),
-                                  letterSpacing: 10,
-                                  height: 1.0,
-                                  fontFamily: 'Montserrat',
-                                  fontSize: getDeviceSize(context).width < 302
-                                      ? 48
-                                      : 64)),
+                          Text(
+                            "Kumar",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w200,
+                              color: Colors.white.withOpacity(0.8),
+                              letterSpacing: 10,
+                              height: 1.0,
+                              fontFamily: 'Montserrat',
+                              fontSize:
+                                  getDeviceSize(context).width < 302 ? 48 : 64,
+                            ),
+                          ),
                           const SizedBox(
                             height: 16,
                           ),
@@ -174,7 +129,7 @@ class HomeMobile extends StatelessWidget {
                                     ),
                                   ),
                                   TyperAnimatedText(
-                                    'MERN Stack Developer,',
+                                    'Node.js Developer,',
                                     textStyle: const TextStyle(
                                       fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.w400,
@@ -207,20 +162,60 @@ class HomeMobile extends StatelessWidget {
                                 SizedBox(
                                   width: getDeviceSize(context).width * 0.01,
                                 ),
-                                const SocialContainer(
-                                  link: "assets/logo/linkedin.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://www.linkedin.com/in/pardeep-kumar-a257221a1/"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "assets/logo/linkedin.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "assets/logo/github.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://github.com/PardeepKumar816"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "assets/logo/github.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "assets/logo/instagram.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://www.instagram.com/pardeep_hotwani/"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "assets/logo/instagram.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "assets/logo/twitter.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://twitter.com/Pardeepm006"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "assets/logo/twitter.png",
+                                  ),
                                 ),
-                                const SocialContainer(
-                                  link: "assets/logo/facebook.png",
+                                InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse(
+                                          "https://www.facebook.com/Pardeepmalhi816/"),
+                                    );
+                                  },
+                                  child: const SocialContainer(
+                                    link: "assets/logo/facebook.png",
+                                  ),
                                 ),
                               ],
                             ),

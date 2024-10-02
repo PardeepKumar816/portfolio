@@ -10,95 +10,96 @@ class ContactMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color(0xff232129),
         body: Container(
-      decoration: const BoxDecoration(
-        gradient: MyColors.linearGradientDark,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Spacer(),
-          CarouselSlider(
-            items: List.generate(
-              3,
-              (i) {
-                return Container(
-                  width: 1.sw * 0.8,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(24),
-                    color: const Color(0xff282829),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        contactData.values.toList()[i]["icon"],
-                        color: Colors.white,
-                        size: 60.w,
-                      ),
-                      SizedBox(
-                        height: 8.h,
-                      ),
-                      Text(
-                        contactData.keys.toList()[i],
-                        style: TextStyle(
-                          fontSize: 18.h,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        contactData.values.toList()[i]["text"],
-                        style: TextStyle(
-                          fontSize: 13.h,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-            options: CarouselOptions(enlargeCenterPage: true),
+          decoration: const BoxDecoration(
+            gradient: MyColors.linearGradientDark,
           ),
-          const Spacer(),
-          Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Developed in ",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16.h,
+              const Spacer(),
+              CarouselSlider(
+                items: List.generate(
+                  3,
+                  (i) {
+                    return Container(
+                      width: 1.sw * 0.8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24),
+                        color: const Color(0xff282829),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            contactData.values.toList()[i]["icon"],
+                            color: Colors.white,
+                            size: 60.w,
+                          ),
+                          SizedBox(
+                            height: 8.h,
+                          ),
+                          Text(
+                            contactData.keys.toList()[i],
+                            style: TextStyle(
+                              fontSize: 18.h,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            contactData.values.toList()[i]["text"],
+                            style: TextStyle(
+                              fontSize: 13.h,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
+                options: CarouselOptions(enlargeCenterPage: true),
               ),
-              const Icon(
-                FontAwesomeIcons.solidHeart,
-                color: Colors.blueAccent,
+              const Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Developed in ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.h,
+                    ),
+                  ),
+                  const Icon(
+                    FontAwesomeIcons.solidHeart,
+                    color: Colors.blueAccent,
+                  ),
+                  Text(
+                    " with ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.h,
+                    ),
+                  ),
+                  Text(
+                    "Flutter",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.h,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                " with ",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16.h,
-                ),
-              ),
-              Text(
-                "Flutter",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16.h,
-                ),
+              SizedBox(
+                height: 32.h,
               ),
             ],
           ),
-          SizedBox(
-            height: 32.h,
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }
 

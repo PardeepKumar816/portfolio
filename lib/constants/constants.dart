@@ -13,3 +13,13 @@ final Map<String, String> aboutData = {
 class Constants {
   static ScrollController? controller;
 }
+
+class GlobalContext {
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
+
+  static BuildContext? get currentContext => navigatorKey.currentContext;
+
+  static NavigatorState? get currentState => navigatorKey.currentState;
+  static final GlobalKey<ScaffoldState> globalScaffoldKey = GlobalKey();
+}

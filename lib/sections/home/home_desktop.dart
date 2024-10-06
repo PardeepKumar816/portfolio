@@ -240,7 +240,7 @@ class HomeDesktop extends StatelessWidget {
                               child: Column(
                                 children: [
                                   const Text(
-                                    "LET\'S CHAT!",
+                                    "LET'S CHAT!",
                                     style: TextStyle(
                                         color: MyColors.yellowE3812A,
                                         height: 2.0,

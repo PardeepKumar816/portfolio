@@ -186,7 +186,7 @@ class HomeDesktop extends StatelessWidget {
                                       );
                                     },
                                     child: const SocialContainer(
-                                      link: "logo/linkedin.png",
+                                      link: "assets/logo/linkedin.png",
                                     ),
                                   ),
                                   InkWell(
@@ -197,7 +197,7 @@ class HomeDesktop extends StatelessWidget {
                                       );
                                     },
                                     child: const SocialContainer(
-                                      link: "logo/github.png",
+                                      link: "assets/logo/github.png",
                                     ),
                                   ),
                                   InkWell(
@@ -208,7 +208,7 @@ class HomeDesktop extends StatelessWidget {
                                       );
                                     },
                                     child: const SocialContainer(
-                                      link: "logo/instagram.png",
+                                      link: "assets/logo/instagram.png",
                                     ),
                                   ),
                                   InkWell(
@@ -219,7 +219,7 @@ class HomeDesktop extends StatelessWidget {
                                       );
                                     },
                                     child: const SocialContainer(
-                                      link: "logo/twitter.png",
+                                      link: "assets/logo/twitter.png",
                                     ),
                                   ),
                                   InkWell(
@@ -230,7 +230,7 @@ class HomeDesktop extends StatelessWidget {
                                       );
                                     },
                                     child: const SocialContainer(
-                                      link: "logo/facebook.png",
+                                      link: "assets/logo/facebook.png",
                                     ),
                                   ),
                                 ],
@@ -305,7 +305,7 @@ class HomeDesktop extends StatelessWidget {
                             Align(
                                 alignment: Alignment.center,
                                 child: Image.asset(
-                                  "images/pardeep.png",
+                                  "assets/images/pardeep.png",
                                   width: getDeviceSize(context).width * 0.35,
                                   height: getDeviceSize(context).width * 0.35,
                                 ))

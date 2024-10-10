@@ -194,7 +194,7 @@ class HomeTablet extends StatelessWidget {
                                     );
                                   },
                                   child: const SocialContainer(
-                                    link: "logo/linkedin.png",
+                                    link: "assets/logo/linkedin.png",
                                   ),
                                 ),
                                 InkWell(
@@ -205,7 +205,7 @@ class HomeTablet extends StatelessWidget {
                                     );
                                   },
                                   child: const SocialContainer(
-                                    link: "logo/github.png",
+                                    link: "assets/logo/github.png",
                                   ),
                                 ),
                                 InkWell(
@@ -216,7 +216,7 @@ class HomeTablet extends StatelessWidget {
                                     );
                                   },
                                   child: const SocialContainer(
-                                    link: "logo/instagram.png",
+                                    link: "assets/logo/instagram.png",
                                   ),
                                 ),
                                 InkWell(
@@ -227,7 +227,7 @@ class HomeTablet extends StatelessWidget {
                                     );
                                   },
                                   child: const SocialContainer(
-                                    link: "logo/twitter.png",
+                                    link: "assets/logo/twitter.png",
                                   ),
                                 ),
                                 InkWell(
@@ -238,7 +238,7 @@ class HomeTablet extends StatelessWidget {
                                     );
                                   },
                                   child: const SocialContainer(
-                                    link: "logo/facebook.png",
+                                    link: "assets/logo/facebook.png",
                                   ),
                                 ),
                               ],
@@ -343,7 +343,7 @@ class HomeTablet extends StatelessWidget {
                                               .withOpacity(0.3),
                                           image: const DecorationImage(
                                             image: AssetImage(
-                                                "images/pardeep.png"),
+                                                "assets/images/pardeep.png"),
                                           ),
                                         ),
                                       ),
@@ -384,7 +384,7 @@ class HomeTablet extends StatelessWidget {
                         getDeviceSize(context).height < 1000)
                       Expanded(
                           child: Image.asset(
-                        "images/pardeep.png",
+                        "assets/images/pardeep.png",
                         width: getDeviceSize(context).width * 0.35,
                         height: getDeviceSize(context).width * 0.35,
                       ))
@@ -395,7 +395,7 @@ class HomeTablet extends StatelessWidget {
                       width: getDeviceSize(context).width,
                       height: getDeviceSize(context).height / 2,
                       child: Image.asset(
-                        "images/pardeep.png",
+                        "assets/images/pardeep.png",
                         width: getDeviceSize(context).width * 0.35,
                         height: getDeviceSize(context).width * 0.35,
                       ))

@@ -29,7 +29,7 @@ class AboutDesktop extends StatelessWidget {
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.fill,
-                        image: AssetImage("/images/pardeep5.JPG")),
+                        image: AssetImage("assets/images/pardeep5.JPG")),
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     color: MyColors.yellowE3812A,
                   ),

@@ -24,14 +24,18 @@ class AboutDesktop extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  width: 300, //getDeviceSize(context).width*0.37,
-                  height: getDeviceSize(context).height - 200,
+                  //  width: 300, //getDeviceSize(context).width*0.37,
+                  // height: getDeviceSize(context).height - 200,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage("assets/images/pardeep5.JPG")),
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    color: MyColors.yellowE3812A,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.center,
+                      image: AssetImage(
+                        "assets/images/self_image.png",
+                      ),
+                    ),
+                    //  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    color: Colors.transparent,
                   ),
                 ),
               ),

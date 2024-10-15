@@ -277,14 +277,14 @@ class HomeDesktop extends StatelessWidget {
                                     text2: "Projects Completed",
                                     text3: "Locally & Internationally",
                                   ),
-                                  SizedBox(
-                                    width: getDeviceSize(context).width * 0.02,
-                                  ),
-                                  const MultilineTextContainer(
-                                    text1: "10",
-                                    text2: "Projects Completed",
-                                    text3: "Locally & Internationally",
-                                  ),
+                                  // SizedBox(
+                                  //   width: getDeviceSize(context).width * 0.02,
+                                  // ),
+                                  // const MultilineTextContainer(
+                                  //   text1: "10",
+                                  //   text2: "Projects Completed",
+                                  //   text3: "Locally & Internationally",
+                                  // ),
                                 ],
                               ),
                             )

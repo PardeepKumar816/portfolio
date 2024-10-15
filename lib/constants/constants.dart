@@ -4,9 +4,9 @@ final routes = ['Home', 'About', 'Tech', 'Projects', 'Contact'];
 
 final Map<String, String> aboutData = {
   "bio":
-      "I am a mobile application developer at Aditya Enterprises, where I design, develop, and deploy cross-platform apps using Flutter and Dart. I have created multiple apps for various clients, ranging from e-commerce to education, and have received positive feedback and ratings for my work. I am proficient in Java, JavaScript, and have obtained Google Data Analytics and Data Science with Python certifications from SkillUp Online.I am also a final year student of Software Engineering at Mehran University of Engineering and Technology, one of the renowned institutions in Pakistan. I have maintained a high academic performance throughout my studies, and have participated in several projects and competitions related to app development, MERN stack development. I am passionate about learning new technologies and stacks, and improving my skills and creativity. My goal is to become a successful and innovative software engineer in the app development and full stack development industry.",
+      "I am a Software Engineer at Eplanet Global, where I design, develop, and deploy cross-platform apps for Android and iOS using Flutter and Dart. Previously, I worked remotely as a Flutter developer at Aditya Enterprises for 2 years, where I contributed to the development of various applications across different domains. Prior to these roles, I completed two internships that helped me build a strong foundation in software development. I am proficient in Java, JavaScript, and Node.js. I have successfully completed my Software Engineering degree at Mehran University of Engineering and Technology, maintaining high academic performance. I am passionate about learning new technologies and improving my skills. My goal is to become a successful and innovative full stack mobile application developer.",
   "quote":
-      '“If you are not going to tell the world who you are, the world is not going to tell you, how good you are.”',
+      '“Success is built on continuous learning, innovation, and the courage to turn challenges into opportunities.”',
   "greeting": "Hello there! My name is Pardeep Kumar"
 };
 

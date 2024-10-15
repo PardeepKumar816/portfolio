@@ -38,9 +38,7 @@ class TechDesktop extends StatelessWidget {
                       height: 16,
                     ),
                     Text(
-                      """Change is inevitable, so I keep on exploring new technology, learn 
-it in a minimal possible way and then build something out of it to 
- see how well I did :)""",
+                      """Growth happens when curiosity meets action. I dive into new technologies, simplify the complex, and turn ideas into meaningful solutions that push boundaries :)""",
                       style: TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
@@ -63,12 +61,26 @@ it in a minimal possible way and then build something out of it to
                           asset: "assets/icons/flutter.svg",
                           skill: "Flutter",
                         ),
+                        // SizedBox(
+                        //   width: 12,
+                        // ),
+                        // SkillContainer(
+                        //   asset: "assets/icons/dart.svg",
+                        //   skill: "Dart",
+                        // ),
                         SizedBox(
                           width: 12,
                         ),
                         SkillContainer(
-                          asset: "assets/icons/dart.svg",
-                          skill: "Dart",
+                          asset: "assets/icons/android.svg",
+                          skill: "Android",
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        SkillContainer(
+                          asset: "assets/icons/apple.svg",
+                          skill: "IOS",
                         ),
                       ],
                     ),

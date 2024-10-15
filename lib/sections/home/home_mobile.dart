@@ -267,15 +267,15 @@ class HomeMobile extends StatelessWidget {
                                         text2: "Projects Completed",
                                         text3: "Locally & Internationally",
                                       ),
-                                      SizedBox(
-                                        height:
-                                            getDeviceSize(context).width * 0.02,
-                                      ),
-                                      const MultilineTextContainer(
-                                        text1: "10",
-                                        text2: "Projects Completed",
-                                        text3: "Locally & Internationally",
-                                      ),
+                                      // SizedBox(
+                                      //   height:
+                                      //       getDeviceSize(context).width * 0.02,
+                                      // ),
+                                      // const MultilineTextContainer(
+                                      //   text1: "10",
+                                      //   text2: "Projects Completed",
+                                      //   text3: "Locally & Internationally",
+                                      // ),
                                     ],
                                   ),
                                 ],

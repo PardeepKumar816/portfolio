@@ -306,25 +306,25 @@ class HomeTablet extends StatelessWidget {
                                             text2: "Projects Completed",
                                             text3: "Locally & Internationally",
                                           ),
-                                          if (getDeviceSize(context).width <=
-                                              767)
-                                            SizedBox(
-                                              height:
-                                                  getDeviceSize(context).width *
-                                                      0.02,
-                                            ),
-                                          if (getDeviceSize(context).width >
-                                              767)
-                                            SizedBox(
-                                              width:
-                                                  getDeviceSize(context).width *
-                                                      0.02,
-                                            ),
-                                          const MultilineTextContainer(
-                                            text1: "10",
-                                            text2: "Projects Completed",
-                                            text3: "Locally & Internationally",
-                                          ),
+                                          // if (getDeviceSize(context).width <=
+                                          //     767)
+                                          //   SizedBox(
+                                          //     height:
+                                          //         getDeviceSize(context).width *
+                                          //             0.02,
+                                          //   ),
+                                          // if (getDeviceSize(context).width >
+                                          //     767)
+                                          //   SizedBox(
+                                          //     width:
+                                          //         getDeviceSize(context).width *
+                                          //             0.02,
+                                          //   ),
+                                          // const MultilineTextContainer(
+                                          //   text1: "10",
+                                          //   text2: "Projects Completed",
+                                          //   text3: "Locally & Internationally",
+                                          // ),
                                         ],
                                       ),
                                       SizedBox(
@@ -365,15 +365,15 @@ class HomeTablet extends StatelessWidget {
                                         text2: "Projects Completed",
                                         text3: "Locally & Internationally",
                                       ),
-                                      SizedBox(
-                                        width:
-                                            getDeviceSize(context).width * 0.02,
-                                      ),
-                                      const MultilineTextContainer(
-                                        text1: "10",
-                                        text2: "Projects Completed",
-                                        text3: "Locally & Internationally",
-                                      ),
+                                      // SizedBox(
+                                      //   width:
+                                      //       getDeviceSize(context).width * 0.02,
+                                      // ),
+                                      // const MultilineTextContainer(
+                                      //   text1: "10",
+                                      //   text2: "Projects Completed",
+                                      //   text3: "Locally & Internationally",
+                                      // ),
                                     ],
                                   ),
                           )

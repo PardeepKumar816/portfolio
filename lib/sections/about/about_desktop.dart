@@ -15,29 +15,40 @@ class AboutDesktop extends StatelessWidget {
         decoration: const BoxDecoration(gradient: MyColors.linearGradientDark),
         child: Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: getDeviceSize(context).width < 1135
-                  ? getDeviceSize(context).width * 0.03
-                  : getDeviceSize(context).width * 0.06,
-              vertical: 48),
+            // horizontal: getDeviceSize(context).width < 1135
+            //     ? getDeviceSize(context).width * 0.03
+            //     : getDeviceSize(context).width * 0.06,
+            vertical: 48,
+          ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 flex: 1,
-                child: Container(
-                  //  width: 300, //getDeviceSize(context).width*0.37,
-                  // height: getDeviceSize(context).height - 200,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      alignment: Alignment.center,
-                      image: AssetImage(
-                        "assets/images/self_image.png",
-                      ),
-                    ),
-                    //  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    color: Colors.transparent,
-                  ),
+                child: Image.asset(
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.fitHeight,
+                  "assets/images/pardeep.png",
                 ),
+                // Container(
+                //   alignment: Alignment.topCenter,
+                //   decoration: const BoxDecoration(
+                //     // image: DecorationImage(
+                //     //   fit: BoxFit.contain,
+                //     //   alignment: Alignment.topCenter,
+                //     //   image: AssetImage(
+                //     //     "assets/images/self_image.png",
+                //     //   ),
+                //     // ),
+                //     //  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                //     color: Colors.amber,
+                //   ),
+                //   child: Image.asset(
+                //     alignment: Alignment.topCenter,
+                //     fit: BoxFit.none,
+                //     "assets/images/self_image.png",
+                //   ),
+                // ),
               ),
               SizedBox(
                 width: getDeviceSize(context).width < 1135
